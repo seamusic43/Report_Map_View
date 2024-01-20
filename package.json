@@ -1,0 +1,19 @@
+{
+  "name": "first_set",
+  "version": "1.0.0",
+  "description": "first project for nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "seamusic",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "mysql2": "^3.7.0",
+    "sequelize": "^6.35.2",
+    "sqlite3": "^5.1.7"
+  }
+}
