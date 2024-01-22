@@ -66,7 +66,7 @@ module.exports = (sequelize) => {
         },
         selected_at: {
             type: DataTypes.DATEONLY,
-            comment: '당첨 발표일'
+            comment: '리뷰 당첨 발표일'
         },
         posting_started_at: {
             type: DataTypes.DATEONLY,
@@ -82,6 +82,15 @@ module.exports = (sequelize) => {
         }
     }, {
         timestamps: true,
-        charset: 'utf8'
+        charset: 'utf8',
+        indexes: [
+            {
+                name: 'started_index',
+                type: 'UNIQUE',
+                unique: true,
+                fields: [{ name: 'apply_started_at', name: 'apply_ended_at' }],
+            }
+        ]
+
     })
 }
