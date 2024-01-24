@@ -13,8 +13,18 @@ async function insertOrUpdate(req, res) {
     }
 }
 
+async function getAll(req, res) {
+    const { store_id } = req.body;
+    if (isNaN(store_id)) {
+        const result = Store.findAll();
+    } else {
+        const result = Store.find({ where: { store_id } });
+    }
+    res.status(200).json(result);
+}
+
 module.exports = wrapWithErrorHander({
-    //    getAll,
+    getAll,
     insertOrUpdate,
     //    remove,
 });

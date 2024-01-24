@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const models = require('./models')
 const siteController = require('./controller/site.controller.js');
+const storeController = require('./controller/store.controller.js');
 
 app.use(bodyParser.json());
 
@@ -22,4 +23,6 @@ app.listen(port, () => {
     app.get('/site-info', siteController.getAll);
     app.post('/site-info', siteController.insertOrUpdate);
     app.delete('/site-info', siteController.remove);
+    app.get('/store-list', storeController.getAll);
+    app.post('/store', storeController.insertOrUpdate);
 })
